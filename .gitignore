@@ -2,6 +2,7 @@
 *.aux
 *.bbl
 *.blg
+*.bcf
 *.log
 *.out
 *.toc
@@ -19,5 +20,5 @@ main.run.xml
 *.tex.backup
 .vscode/
 
-# --- Opcional: No subir el PDF final ---
+# --- No subir el PDF final ---
 *.pdf
