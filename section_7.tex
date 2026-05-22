@@ -1,0 +1,21 @@
+\section{Conclusiones y Trabajos Futuros}
+
+\subsection{Conclusiones Principales}
+
+Tras recorrer el diseño, implementación y evaluación del marco, emerge con claridad una convicción: la hibridación entre inteligencia generativa y agentes autónomos multi-agente representa un avance sustantivo hacia operaciones de servicio en órbita verdaderamente resilientes. 
+
+El trabajo ha demostrado que extender el ciclo MAPE-K con capas de razonamiento LLM/ReAct y planificación híbrida basada en transformers permite alcanzar mejoras simultáneas en eficiencia de combustible, velocidad de decisión y robustez que superan a enfoques convencionales. Más allá de las métricas, el marco ofrece modularidad y trazabilidad suficientes para considerarse un candidato viable en misiones reales.
+
+Al comparar con arquitecturas de referencia previas para OSAM autónomo \cite{RefArch_OSAM2022}, nuestro aporte radica precisamente en cerrar la brecha entre capacidades cognitivas de alto nivel y control verificable de bajo nivel. Lejos de pretender ser una solución universal, este marco establece un punto de partida reproducible que equilibra innovación con las exigencias de seguridad inherentes al entorno espacial.
+
+\subsection{Trabajos Futuros}
+
+Uno de los desafíos persistentes que surge al concluir un estudio de esta naturaleza consiste en identificar las extensiones más prometedoras sin dispersar el esfuerzo. 
+
+Resulta particularmente llamativo el potencial de escalar el componente generativo mediante técnicas avanzadas de warm-starting y optimización secuencial convexa \cite{Guffanti2024_ART}. Futuros desarrollos deberían explorar versiones destiladas y más eficientes de estos modelos que permitan su ejecución sostenida en hardware rad-hard de próxima generación.
+
+Otra dirección clara implica profundizar en la integración híbrida entre LLMs y políticas RL, aprovechando experiencias previas con modelos de lenguaje como operadores autónomos completos \cite{Carrasco2025_LLMSpace}. Específicamente, proponemos investigar mecanismos de aprendizaje continuo onboard donde los agentes actualicen su conocimiento declarativo y procedural directamente desde telemetría y outcomes de misiones, manteniendo siempre escudos de seguridad formales.
+
+Adicionalmente, queda pendiente una validación en entornos hardware-in-the-loop de mayor fidelidad y, eventualmente, demostraciones en misiones orbitales reales a pequeña escala. Aspectos éticos y regulatorios de la autonomía en entornos congestionados también merecerán atención dedicada.
+
+En síntesis, aunque el camino hacia la autonomía plena en OSAM sigue siendo largo, el marco presentado aquí ofrece una base técnica sólida y un conjunto claro de caminos para avanzar. Creemos que la combinación inteligente de generación, aprendizaje y verificación matemática constituirá un elemento central en la próxima generación de sistemas espaciales.

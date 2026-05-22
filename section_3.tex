@@ -1,0 +1,43 @@
+\section{Marco de Referencia Propuesto}
+
+\subsection{Arquitectura General MAPE-K Extendida}
+
+Particularmente llamativo es el hecho de que muchas arquitecturas autónomas espaciales sigan ancladas en ciclos MAPE-K clásicos, efectivos en entornos predecibles pero insuficientes ante la complejidad impredecible de las operaciones OSAM. 
+
+Partiendo de propuestas de arquitecturas de referencia para autonomía y adaptividad en sistemas satelitales \cite{Basciani2026_RA} y de trabajos sobre sistemas de decisión distribuidos para trusted autonomy \cite{Thangavel2024}, proponemos una extensión natural del ciclo MAPE-K. La extensión incorpora módulos generativos en la fase de Planificación y añade una capa explícita de razonamiento multi-agente que opera en paralelo al bucle principal.
+
+La arquitectura resultante consta de tres niveles jerárquicos pero fuertemente acoplados: una capa cognitiva de agentes generativos, una capa de planificación y control híbrida, y una capa de ejecución hardware-aware. Esta estructura preserva las garantías de adaptabilidad del MAPE-K original mientras introduce flexibilidad semántica y capacidad de razonamiento de alto nivel que los enfoques puramente reactivos tienden a carecer. 
+
+No obstante, cabe matizar que extender MAPE-K no está exento de desafíos; la principal dificultad radica en mantener propiedades de verificabilidad y predictibilidad cuando se inyectan componentes estocásticos como LLMs.
+
+\subsection{Capa de Agentes Generativos (LLM/ReAct)}
+
+Resulta revelador observar cómo la integración de agentes basados en LLMs con patrones ReAct permite cerrar la brecha entre conocimiento declarativo y acción en tiempo real. En nuestra propuesta, cada agente especializado (inspector, servicer, coordinador) opera como un nodo autónomo que percibe el estado del entorno a través de telemetría procesada, consulta memoria externa vía RAG y genera tanto planes de alto nivel como justificaciones en lenguaje natural.
+
+La interacción entre agentes se modela mediante un Proceso de Decisión de Markov (MDP) formalizado como sigue:
+
+\begin{equation}
+\langle \mathcal{S}, \mathcal{A}, \mathcal{T}, \mathcal{R}, \gamma \rangle
+\label{eq:mdp}
+\end{equation}
+
+donde $\mathcal{S}$ representa el espacio de estados orbitales aumentado con información semántica, $\mathcal{A}$ las acciones discretas y continuas disponibles, $\mathcal{T}$ la función de transición dinámica (incluyendo perturbaciones), $\mathcal{R}$ la función de recompensa multi-objetivo (seguridad, eficiencia de combustible, tiempo) y $\gamma$ el factor de descuento. 
+
+Esta formulación permite a los agentes generar trayectorias de razonamiento del tipo ``Observar $\rightarrow$ Pensar $\rightarrow$ Actuar $\rightarrow$ Reflexionar'', mejorando notablemente la trazabilidad de decisiones críticas. La modularidad de esta capa facilita tanto el despliegue distribuido como la actualización selectiva de capacidades cognitivas sin comprometer el sistema completo.
+
+\subsection{Capa de Planificación y Control (Transformers + SCP)}
+
+Uno de los desafíos persistentes al diseñar control autónomo orbital radica en reconciliar la creatividad de los modelos generativos con las garantías de seguridad que exigen las operaciones en el espacio. 
+
+En este sentido, inspirados en la integración de transformers para warm-starting de optimizaciones de trayectoria \cite{Guffanti2024_ART}, definimos una capa híbrida donde un modelo generativo pre-entrenado propone secuencias iniciales de maniobras factibles que posteriormente son refinadas mediante Sequential Convex Programming (SCP). Este enfoque permite generar trayectorias óptimas en pocos segundos incluso en escenarios de rendezvous no cooperativos, manteniendo al mismo tiempo restricciones de seguridad verificables.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\linewidth]{fig3.png}
+\caption{Diagrama del marco propuesto: arquitectura MAPE-K extendida con capas de agentes generativos y planificación híbrida Transformers+SCP para operaciones OSAM.}
+\label{fig:proposed_framework}
+\end{figure}
+
+La interacción entre ambas capas no es unidireccional. El módulo SCP retroalimenta al agente generativo con métricas de factibilidad, permitiendo refinamiento iterativo del plan. Esta retroalimentación bidireccional constituye, en nuestra experiencia, uno de los elementos más potentes del marco, ya que combina intuición generativa con rigor matemático de forma eficiente para hardware rad-hard actual.
+
+En conjunto, el marco propuesto establece un equilibrio práctico entre innovación y madurez tecnológica, ofreciendo un camino reproducible hacia niveles superiores de autonomía en misiones de servicio en órbita.

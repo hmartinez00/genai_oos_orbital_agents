@@ -1,0 +1,23 @@
+# --- LaTeX - Archivos auxiliares y de compilación ---
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.pdfsync
+main.run.xml
+
+# --- Archivos de respaldo de editores (TeXstudio, VSCode, etc.) ---
+*.bak
+*.sav
+*.tex.backup
+.vscode/
+
+# --- Opcional: No subir el PDF final ---
+*.pdf

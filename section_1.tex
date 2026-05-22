@@ -1,0 +1,49 @@
+\section{Introducción}
+
+\subsection{Motivación y Contexto Espacial}
+
+Aunque los enfoques tradicionales de control desde tierra han sostenido con éxito las operaciones espaciales durante décadas, la explosión de constelaciones en órbita baja y la creciente complejidad de las misiones demandan un salto cualitativo hacia la autonomía. Las operaciones de servicio en órbita (OSAM) --inspección, reparación, reabastecimiento y ensamblaje-- representan hoy uno de los dominios más prometedores y desafiantes de la ingeniería espacial. 
+
+Particularmente llamativo resulta observar cómo la proliferación de satélites ha transformado un entorno antes dominado por unos pocos actores en un ecosistema denso y dinámico, donde la latencia de comunicaciones y las restricciones operativas hacen inviable la supervisión continua desde tierra. En este escenario, las arquitecturas de referencia para OSAM autónomo adquieren relevancia estratégica al enfatizar la resiliencia y la capacidad de respuesta adaptativa \cite{RefArch_OSAM2022}.
+
+\subsection{Desafíos Técnicos Actuales}
+
+Uno de los desafíos persistentes que surge al analizar las operaciones espaciales actuales radica en la limitada confianza que los sistemas de decisión distribuidos (DSS) inspiran en entornos de alta incertidumbre. Aunque los avances en inteligencia artificial han abierto nuevas posibilidades, la mayoría de las plataformas satelitales siguen confinadas a reglas predefinidas y casos específicos. 
+
+La transición hacia operaciones autónomas confiables (TASO) exige un cambio paradigmático tanto en el diseño de vehículos espaciales como en los segmentos terrestres. Revisiones exhaustivas recientes destacan que, pese a los progresos, persisten limitaciones significativas en los enfoques ground-in-the-loop, especialmente en cuanto a adaptabilidad en tiempo real y gestión de integridad predictiva y reactiva \cite{Thangavel2024}. Estas restricciones se agravan en escenarios OSAM, donde un servicer debe manejar rendezvous precisos, manipulación de objetos cooperativos y no cooperativos, y toma de decisiones bajo perturbaciones orbitales impredecibles.
+
+Lejos de ser un asunto resuelto, la literatura sugiere que la integración de capacidades cognitivas avanzadas resulta esencial para superar estas barreras.
+
+\subsection{Contribuciones del Trabajo}
+
+Este artículo propone un marco de referencia técnico que integra arquitecturas de inteligencia artificial generativa con sistemas multi-agente autónomos específicamente orientados a operaciones de servicio en órbita. 
+
+Nuestro enfoque combina modelos generativos basados en transformers --capaces de generar trayectorias óptimas de forma eficiente-- con agentes autónomos que operan bajo un esquema MAPE-K extendido. Inspirados en trabajos que demuestran el potencial de los transformers para warm-starting de optimizaciones de trayectoria en rendezvous espaciales \cite{Guffanti2024_ART}, el marco introduce mecanismos híbridos que fusionan planificación generativa con control secuencial convexo, garantizando al mismo tiempo seguridad verificable y eficiencia computacional onboard.
+
+\begin{figure}[t]
+\centering
+% \includegraphics[width=0.95\linewidth]{fig1.png}
+\scalebox{1}{\input{codes/fig1.tex}}
+\caption{Visión general del marco propuesto de IA generativa y agentes autónomos para operaciones OSAM.}
+\label{fig:framework_overview}
+\end{figure}
+
+La Tabla 1 compara los principales enfoques de autonomía reportados en la literatura reciente, destacando las ventajas del marco híbrido propuesto en términos de latencia de decisión, robustez y requisitos computacionales.
+
+\begin{table}[t]
+\centering
+\caption{Comparación de enfoques de autonomía en operaciones espaciales}
+\label{tab:autonomy_comparison}
+\begin{tabular}{lccc}
+\hline
+Enfoque & Latencia Decisión & Robustez a Perturbaciones & Requisitos HW \\
+\hline
+Ground-in-the-loop & Alta & Media & Bajo (tierra) \\
+RL puro & Baja & Alta en simulación & Alto \\
+MAPE-K clásico & Media & Media & Medio \\
+\textbf{IA Generativa + Agentes (propuesto)} & Muy baja & Alta & Medio (rad-hard) \\
+\hline
+\end{tabular}
+\end{table}
+
+En síntesis, las contribuciones principales radican en la definición de una arquitectura modular reproducible, la integración explícita de generación y optimización segura, y la identificación de caminos concretos hacia implementación en hardware espacial actual. Lejos de pretender resolver todos los interrogantes del campo, este trabajo establece un punto de partida técnico sólido para futuras misiones OSAM más autónomas y resilientes.

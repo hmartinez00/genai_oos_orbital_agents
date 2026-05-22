@@ -1,0 +1,43 @@
+\section{Discusión}
+
+\subsection{Implicaciones para Misiones Reales}
+
+Resulta revelador observar cómo un marco que combina generación y aprendizaje multi-agente deja de ser un ejercicio académico para convertirse en habilitador concreto de nuevas capacidades operacionales. 
+
+La integración propuesta facilita el paso de operaciones supervisadas a misiones con supervisión mínima, especialmente en escenarios de servicado donde la latencia de comunicaciones resulta prohibitiva. Inspirados en validaciones de arquitecturas de referencia en plataformas reales \cite{Basciani2026_RA}, el framework permite a un servicer generar, evaluar y ejecutar planes completos de inspección o reparación con intervención humana solo en casos de alta criticidad. 
+
+Aplicaciones prácticas como Li2025 AIAgents demuestran que agentes con bucles ReAct ya comienzan a operar de forma efectiva en entornos ground/space, sugiriendo que nuestra extensión híbrida podría acelerar la adopción en constelaciones comerciales y misiones de exploración profunda \cite{Li2025_AIAgents}.
+
+\begin{table}[t]
+\centering
+\caption{Trade-offs arquitectónicos del marco propuesto}
+\label{tab:tradeoffs}
+\begin{tabular}{lccc}
+\hline
+Aspecto & Ventaja Propuesta & Desventaja & Comparación con Alternativas \\
+\hline
+Autonomía & Alta (híbrida) & Mayor complejidad & Superior a MAPE-K clásico \\
+Eficiencia Computacional & Media-Alta & Consumo en inferencia LLM & Mejor que LLM puro \\
+Verificabilidad & Alta (SCP + escudos) & Overhead de monitoreo & Superior a RL puro \\
+Escalabilidad Multi-Agente & Alta & Entrenamiento costoso & Comparable a MARL federado \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Limitaciones Técnicas y Éticas}
+
+Uno de los desafíos persistentes al madurar estos sistemas radica en distinguir entre lo técnicamente factible y lo operacionalmente responsable. 
+
+Aunque el marco mejora significativamente métricas de desempeño, todavía exhibe vulnerabilidades frente a distribuciones de datos fuera del entrenamiento y posibles ataques adversariales sobre los componentes generativos. La dependencia de modelos de lenguaje grandes introduce además riesgos de opacidad en la trazabilidad de decisiones, algo que \cite{Li2025_AIAgents} ya señala como preocupación creciente en operaciones satelitales.
+
+Desde el punto de vista ético, la delegación de autoridad decisoria a agentes autónomos en entornos orbitales congestionados plantea interrogantes sobre responsabilidad en caso de fallos y sobre la proliferación de capacidades duales. No obstante, cabe matizar que estas limitaciones no son exclusivas de nuestro enfoque, sino inherentes al estado actual de la autonomía espacial.
+
+\subsection{Comparación con Estado del Arte}
+
+Lejos de ser un asunto resuelto, la trusted autonomy en operaciones espaciales sigue evolucionando entre promesas y realidades. 
+
+Nuestro marco se distingue por su integración explícita de razonamiento generativo con optimización verificable, superando en varios indicadores a enfoques puramente reactivos o puramente generativos. Comparado con revisiones comprehensivas del campo \cite{Thangavel2024}, ofrece una contribución concreta al cerrar la brecha entre planificación cognitiva y control seguro, algo que muchas arquitecturas DSS aún no resuelven satisfactoriamente.
+
+En nuestra experiencia, esta hibridación no solo mejora métricas cuantitativas sino que aporta una flexibilidad operativa difícil de conseguir con métodos tradicionales. Claro está que trabajos como \cite{Basciani2026_RA} establecen un listón alto en adaptabilidad real, y nuestro enfoque busca precisamente alinearse con esa línea de madurez tecnológica.
+
+En definitiva, más que reemplazar enfoques existentes, el marco propuesto busca complementarlos, proporcionando un camino pragmático hacia mayor autonomía sin sacrificar las garantías que las misiones espaciales exigen.

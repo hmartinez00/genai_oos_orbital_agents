@@ -1,0 +1,23 @@
+{
+    "fig1.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A, negro para líneas principales. Diagrama de bloques de arquitectura de alto nivel para marco OSAM: capa superior con Agentes Autónomos (LLM/ReAct), capa media MAPE-K extendida con módulos Generative Planning (Transformers) y Sequential Convex Programming, capa inferior Hardware Onboard y Entorno Orbital. Flechas de flujo bidireccionales claras mostrando feedback loops. Iconos simples para rendezvous, inspection, repair. Sin sombras, sin gradientes, sin texto incrustado en la imagen, sin elementos decorativos, estilo IEEE técnico limpio y profesional"
+    },
+    "fig2.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A, negro para líneas y ejes. Gráfico de evolución temporal (línea de tiempo horizontal 2022-2026) con tres series de líneas o barras apiladas: IA Generativa/LLMs (azul), MARL/Agentes Autónomos (gris oscuro), Arquitecturas OSAM (negro). Eje Y: Número de publicaciones indexadas. Puntos de datos marcados con círculos simples. Leyenda clara en parte inferior. Sin sombras, sin gradientes, sin texto incrustado dentro de la imagen, estilo IEEE técnico limpio y profesional, líneas suaves y precisas"
+    },
+    "fig3.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A, negro para líneas y flechas. Diagrama completo de arquitectura MAPE-K extendida: bloques rectangulares principales para Monitor, Analyze, Plan (con sub-bloque Transformers), Execute. Capa superior Agentes Generativos (LLM/ReAct) con iconos de múltiples agentes conectados. Capa inferior Hardware Onboard. Flechas gruesas bidireccionales mostrando loops de feedback y warm-starting hacia Sequential Convex Programming. Iconos simples de satélite, rendezvous y órbita. Sin sombras, sin gradientes, sin texto incrustado dentro de la imagen, estilo IEEE técnico limpio y profesional, líneas precisas y espaciado equilibrado"
+    },
+    "fig4.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A, negro para líneas y flechas. Pipeline de entrenamiento horizontal en etapas secuenciales: 1. Pre-entrenamiento MARL en OrbitZoo (bloque con icono de simulación orbital), 2. Fine-tuning LLM con RAG (bloque con símbolo de red neuronal), 3. Entrenamiento Híbrido Alternado (flechas bidireccionales), 4. Validación en Escenarios OSAM (rendezvous, inspection). Flechas de flujo claras con etapas de feedback loop. Iconos simples de satélite, datos de telemetría y recompensa. Sin sombras, sin gradientes, sin texto incrustado dentro de la imagen, estilo IEEE técnico limpio y profesional, espaciado equilibrado y líneas precisas"
+    },
+    "fig5.png": {
+        "prompt_ia": "2D technical vector diagram, engineering schematic, flat design, minimalista, fondo blanco puro, colores azul cobalto #0047AB y gris técnico #4A4A4A, negro para líneas y marcadores. Gráfico de curvas de recompensa acumulada (eje X: episodios de entrenamiento 0-2000, eje Y: recompensa media). Cuatro líneas: Propuesto (azul cobalto, más alta y rápida convergencia), MARL puro (gris), ART baseline (negro), LLM-only (gris claro). Curvas suaves con marcadores circulares en puntos clave (cada 200 episodios). Sombreado ligero de desviación estándar solo con líneas tenues. Leyenda clara en parte superior derecha. Sin sombras, sin gradientes, sin texto incrustado dentro de la imagen, estilo IEEE técnico limpio y profesional, ejes precisos con ticks"
+    },
+    "tabla5.png": {
+        "prompt_ia": "No se requiere figura vectorial para esta sección. Solo tabla IEEE."
+    },
+    "no_figure": {
+        "prompt_ia": "Esta sección no requiere figuras ni tablas adicionales según la especificación."
+    }
+}
