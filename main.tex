@@ -13,10 +13,21 @@
 \usepackage{orcidlink} % Paquete específico para el icono y link de ORCID
 \usepackage[backend=biber, style=ieee, natbib=true]{biblatex}
 
+% --- PREÁMBULO MAESTRO (MANTÉN ESTO EN TU MAIN.TEX) ---
 \usepackage{tikz}
 \usepackage{pgfplots}
-\pgfplotsset{compat=1.18} % O la versión que tengas disponible
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
 
+% Librerías necesarias para los dibujos modulares que vamos a generar
+\usetikzlibrary{
+    arrows.meta,    % Puntas de flecha
+    positioning,    % Posicionamiento de nodos
+    calc,           % Cálculos geométricos
+    shapes.geometric,
+    decorations.pathreplacing
+}
+% ------------------------------------------------------
 % --- CONFIGURACIÓN DE BIBLIOGRAFÍA ---
 \addbibresource{references.bib}
 
@@ -32,6 +43,7 @@
     \\
     Agencia Bolivariana para Actividades Espaciales\\
     Email: hmartinez@abae.gob.ve
+    \\ \vspace{0.2cm} mayo, 2026
 }
 
 \begin{document}

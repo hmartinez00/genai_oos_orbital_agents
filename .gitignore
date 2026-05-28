@@ -13,6 +13,7 @@
 *.fls
 *.pdfsync
 main.run.xml
+main.bbl-SAVE-ERROR
 
 # --- Archivos de respaldo de editores (TeXstudio, VSCode, etc.) ---
 *.bak
