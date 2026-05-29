@@ -1,6 +1,6 @@
 # Arquitecturas de Inteligencia Artificial Generativa y Agentes Autónomos para Operaciones de Servicio en Órbita: Un Marco de Referencia Técnico
 
-[](/codes/fig1.png)
+![Figura 1](./codes/fig1.png)
 
 ---
 
