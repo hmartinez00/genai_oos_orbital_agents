@@ -23,3 +23,6 @@ main.bbl-SAVE-ERROR
 
 # --- No subir el PDF final ---
 *.pdf
+
+codes/backup/
+*.drawio.bkp
